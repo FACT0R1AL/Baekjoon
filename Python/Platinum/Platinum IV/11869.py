@@ -7,4 +7,5 @@ xor = arr[0]
 for i in range(1, n):
     xor ^= arr[i]
 
-print(xor)
+if (xor): print('koosaga')
+else: print('cubelover')

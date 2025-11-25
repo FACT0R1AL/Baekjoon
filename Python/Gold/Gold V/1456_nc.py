@@ -1,13 +1,13 @@
-erathos = [1] * 9999999
+erathos = [1] * 10000001
 erathos[0] = erathos[1] = 0
 primes = []
 almost_primes = []
 
-for i in range(2, 9999999):
+for i in range(2, 10000001):
     if (erathos[i]):
         primes.append(i)
 
-        for j in range(i*i, 9999999, i):
+        for j in range(i*i, 10000001, i):
             erathos[j] = 0
 
 for i in range(len(primes)):
@@ -49,10 +49,12 @@ a, b = map(int, input().split())
 idxLeft = binary_search(almost_primes, a, 0)
 idxRight = binary_search(almost_primes, b, 1)
 
+print(idxRight, len(almost_primes))
 count = len(almost_primes[idxLeft+1:idxRight])
+
 if (almost_primes[idxLeft] == a): count += 1
-if (almost_primes[idxRight] == b): 
+if (idxRight != len(almost_primes) and almost_primes[idxRight] == b): 
     if (a != b): count += 1
 if (a == 1): count += 1
-print(almost_primes[idxLeft:idxRight+1])
+print(almost_primes[idxLeft+1:idxRight])
 print(count)

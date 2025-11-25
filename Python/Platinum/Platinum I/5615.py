@@ -43,13 +43,13 @@ def milLaPrime(n):
 
     return 1
 
-while True:
-    p, a = map(int, input().rstrip().split())
+count = 0
 
-    if p == 0 and a == 0: break
+T = int(input().rstrip())
 
-    if milLaPrime(p) == 1: print("no")
+for _ in range(T):
+    n = int(input().rstrip())
+    
+    if (milLaPrime(2*n+1)): count += 1
 
-    else:
-        if fastPow(a, p, p) == a%p: print("yes")
-        else: print("no")
+print(count)

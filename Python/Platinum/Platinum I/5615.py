@@ -26,8 +26,7 @@ def milLaPrime(n):
     d = p
 
     for a in tempA:
-        if a % n == 0:
-            continue
+        if a % n == 0: continue
         x = fastPow(a, d, n)
 
         if x == 1 or x == n - 1: continue

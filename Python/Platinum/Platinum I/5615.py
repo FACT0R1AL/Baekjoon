@@ -35,6 +35,7 @@ def isPrime(n):
             return False
 
     return True
+
 count = 0
 
 T = int(input().rstrip())
